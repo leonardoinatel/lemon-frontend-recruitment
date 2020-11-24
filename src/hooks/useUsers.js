@@ -38,7 +38,7 @@ const useUsers = () => {
 
   useEffect(() => {
     fetchMore()
-  })
+  }, [])
 
   return [{ users, loading, error }, { fetchMore }]
 }
