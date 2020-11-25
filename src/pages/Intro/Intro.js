@@ -50,7 +50,7 @@ const Intro = () => {
 
   return (
     <Container>
-      <Title100 id="#greetings">
+      <Title100>
         Hi, nice to meet you{' '}
         <span role="img" aria-labelledby="#greetings">
           🖖🏼
