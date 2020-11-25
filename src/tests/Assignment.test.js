@@ -10,10 +10,10 @@ import {
   screen,
 } from '@testing-library/react'
 
-import Assignment from './Assignment'
+import Assignment from '../pages/Assignment/Assignment'
 
-import * as config from '../../config'
-import theme from '../../theme'
+import * as config from '../config'
+import theme from '../theme'
 
 nock.disableNetConnect()
 
@@ -100,7 +100,7 @@ describe('Assignment', () => {
   it(`should fetch ${config.USERS_PER_REQUEST} github users on load`, async () => {
     const usersMock = mockRequests(1)
     const { getByTestId } = renderPage()
-
+    
     await waitForDomChange(getByTestId('card_grid'))
 
     usersMock.forEach((userMock, i) => {
@@ -117,7 +117,7 @@ describe('Assignment', () => {
       expect(within(card).getByTestId('stats_0')).toHaveTextContent(
         userMock.public_repos,
       )
-      expect(within(card).getByTestId('stats_1')).toHaveTextContent(
+      expect(within(card).getByTestId('stats_0')).toHaveTextContent(
         userMock.public_gists,
       )
     })
