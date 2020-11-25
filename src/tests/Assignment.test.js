@@ -155,19 +155,22 @@ describe('Assignment', () => {
   })
 
   it(`should redirect to user profile's page`, async () => {
-    mockRequests(2)
+    const usersMock = mockRequests(2)
     const { getByTestId } = renderPage()
     window.confirm = jest.fn(() => true)
     const grid = getByTestId('card_grid')
     await waitForDomChange(grid)
     fireEvent.scroll(grid)
-    await waitForDomChange(grid)
-    await waitForDomChange(grid)
-    fireEvent.click(getByTestId('card_51'))
 
-    expect(window.location.assign).toHaveBeenCalledWith(
-      'https://github.com/login52',
-    )
+    usersMock.forEach((userMock, i) => {
+      const card = getByTestId(`card_${i}`);
+      
+      fireEvent.click(card);
+
+      expect(window.location.assign).toHaveBeenCalledWith(
+        userMock.avatar_url,
+      )
+    });
 
     window.confirm.mockRestore()
   })
