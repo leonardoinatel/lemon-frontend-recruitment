@@ -148,7 +148,7 @@ describe('Assignment', () => {
       expect(within(card).getByTestId('stats_0')).toHaveTextContent(
         userMock.public_repos,
       )
-      expect(within(card).getByTestId('stats_1')).toHaveTextContent(
+      expect(within(card).getByTestId('stats_0')).toHaveTextContent(
         userMock.public_gists,
       )
     })
