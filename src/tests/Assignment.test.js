@@ -83,7 +83,8 @@ const mockRequests = (batches, usersPerBatch = config.USERS_PER_REQUEST) => {
 
 describe('Assignment', () => {
   beforeEach(() => {
-    window.location.assign = jest.fn()
+    delete window.location
+    window.location = { assign: jest.fn() }
   })
 
   afterAll(() => {
@@ -161,7 +162,9 @@ describe('Assignment', () => {
     const grid = getByTestId('card_grid')
     await waitForDomChange(grid)
     fireEvent.scroll(grid)
-
+    await waitForDomChange(grid)
+    await waitForDomChange(grid)
+    
     usersMock.forEach((userMock, i) => {
       const card = getByTestId(`card_${i}`);
       
