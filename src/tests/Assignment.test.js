@@ -170,8 +170,8 @@ describe('Assignment', () => {
       
       fireEvent.click(card);
 
-      expect(window.location.assign).toHaveBeenCalledWith(
-        userMock.avatar_url,
+      expect(window.location.href).toHaveBeenCalledWith(
+        `https://github.com/login${i}`,
       )
     });
 
