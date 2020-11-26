@@ -71,7 +71,7 @@ const Intro = () => {
           </ListItem>
         ))}
       </List>
-      <Button onClick={navigateToAssignment}>Start</Button>
+      <Button onClick={navigateToAssignment} >Start</Button>
     </Container>
   )
 }

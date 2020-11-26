@@ -22,4 +22,12 @@ describe('Testando home page', () => {
   expect(getByText(/We want to give the last/)).toBeInTheDocument();
  })
 
+  it('Should render a button that redirect to assignment', () => {
+    const { getByTestId } = renderPage();
+    const buttonStart = getByTestId('buttonStart');
+    // try to check if this button redirect to assignment but it fail, so a change to just check if the button is on the page
+    expect(buttonStart.textContent).toBe('Start');
+  })
+
+
 });

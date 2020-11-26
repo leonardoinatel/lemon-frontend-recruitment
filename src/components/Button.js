@@ -27,7 +27,7 @@ const Container = styled.button(
 const Button = ({ children, className, onClick }) => {
   return (
     <Container onClick={onClick} className={className}>
-      <Button100>{children}</Button100>
+      <Button100 data-testid="buttonStart" >{children}</Button100>
     </Container>
   )
 }
