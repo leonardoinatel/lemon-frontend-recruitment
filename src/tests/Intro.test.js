@@ -6,14 +6,15 @@ import theme from '../theme'
 
 import Intro from '../pages/Intro';
 
-const renderPage = () =>
+describe('Testing home page', () => {
+  const renderPage = () =>
     render(
       <ThemeProvider theme={theme}>
         <Intro />
       </ThemeProvider>,
     )
 
-describe('Testando home page', () => {
+
  it('Should render the home page with messages of greeting', () => {
   const { getByText } = renderPage();
 
@@ -29,5 +30,13 @@ describe('Testando home page', () => {
     expect(buttonStart.textContent).toBe('Start');
   })
 
+  it('Should render each item of recomendation array', () => {
+    const { getByText } = renderPage();
+
+    expect(getByText(/assignment instructions/)).toBeInTheDocument();
+    expect(getByText(/we are not evaluating how fast/)).toBeInTheDocument();
+    expect(getByText(/There are all kinds of bugs/)).toBeInTheDocument();
+    expect(getByText(/Commit your code all the time!/)).toBeInTheDocument();
+  })
 
 });
