@@ -4,7 +4,7 @@ import Link from '../../components/Link'
 
 const recommendations = [
   <>
-    Read the <Link href="https://github.com/lemonenergy/frontend-recruitment-assignment-1" target="_blank">
+    Read the <Link href="https://github.com/lemonenergy/frontend-recruitment-assignment-1" data-testid="linkToGitHub" target="_blank">
     assignment instructions</Link> carefully;
   </>,
   <>
@@ -32,7 +32,7 @@ const recommendations = [
     At Lemon, we use Conventional Commits as our commit message standard, and to
     automate packages and applications version management, if you want to give
     it a try, here&apos;s a{' '}
-    <Link href="https://www.conventionalcommits.org/en/v1.0.0/" target="_blank">
+    <Link href="https://www.conventionalcommits.org/en/v1.0.0/" data-testid="linkToCommit" target="_blank">
       reference
     </Link>{' '}
     you can follow.

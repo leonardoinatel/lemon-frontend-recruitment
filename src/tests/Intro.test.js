@@ -39,4 +39,13 @@ describe('Testing home page', () => {
     expect(getByText(/Commit your code all the time!/)).toBeInTheDocument();
   })
 
+  it('Should Have been links rendering on the page', () => {
+    const { getByTestId } = renderPage();
+    const linkGitHub = getByTestId('linkToGitHub');
+    const linkToCommit = getByTestId('linkToCommit');
+
+    expect((linkGitHub).closest('a')).toHaveAttribute('href', 'https://github.com/lemonenergy/frontend-recruitment-assignment-1');
+    expect((linkToCommit).closest('a')).toHaveAttribute('href', 'https://www.conventionalcommits.org/en/v1.0.0/');
+  })
+
 });
